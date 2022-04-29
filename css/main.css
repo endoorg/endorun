@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+  --yellow: #FFD247;
+  --dark-gray: rgb(44, 44, 44);
+  --light-gray: rgb(185, 185, 185);
+  --shadow-color: rgba(156, 156, 156, 0.24);
+}
+
+body, button, input {
+    font-family: 'Radio Canada', sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
