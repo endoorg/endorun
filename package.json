@@ -1,0 +1,19 @@
+{
+  "name": "endorun",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/endo-org/endo-run.git",
+  "author": "Apor Bokor <aporbokor@protonmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.4.0",
+    "nodemon": "^2.0.16"
+  },
+  "scripts": {
+    "serve": "nodemon server.js"
+  }
+}
