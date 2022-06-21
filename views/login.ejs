@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Endo Run</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
+    <link rel="stylesheet" href="./css/content.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="https://endometriozismagyarorszag.hu/"
+        ><img class="logo" src="../assets/images/logo.svg" alt="logo"
+      /></a>
+    </nav>
+    <section class="content">
+      <div class="login-i"></div>
+      <div class="login">
+        <div class="description">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <div class="inner-login">
+          <h2>Bejelentkezés</h2>
+          <form id="log-f">
+            <input
+              type="text"
+              id="username"
+              placeholder="Felhasználónév"
+              autocomplete="off"
+            />
+            <input
+              type="password"
+              id="password"
+              placeholder="Jelszó"
+              autocomplete="off"
+            />
+            <input type="submit" class="next" value="Tovább" />
+          </form>
+          <a style="font-size: 1rem" href="/">Regisztráció</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-content">
+        <p>Endometriózis Magyarország 2022. | Minden jog fenntartva.</p>
+        <p>Készítette Bokor Apor, Lestár Patrik, Németh Benjámin</p>
+      </div>
+    </footer>
+    <script>
+      const form = document.getElementById('log-f');
+      form.addEventListener('submit', login);
+      async function login(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        const result = await fetch('/api/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            username,
+            password,
+          }),
+        }).then(res => res.json());
+        if (result.status == 'ok') {
+          alert('success');
+          const token = result.data;
+          console.log('got token: ', token);
+          localStorage.setItem('token', token);
+
+          const r = await fetch('/api/result', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              token,
+            }),
+          }).then(res => res.json());
+
+          if (r.status == 'ok') {
+            alert('success');
+            localStorage.setItem('username', r.username);
+            localStorage.setItem('hour', r.hour);
+            localStorage.setItem('minute', r.minute);
+            localStorage.setItem('distance', r.distance);
+            window.open('/result');
+          }
+        } else alert(result.error);
+      }
+    </script>
+  </body>
+</html>

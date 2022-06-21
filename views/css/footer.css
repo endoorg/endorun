@@ -1,0 +1,15 @@
+footer {
+  width: 100%;
+  height: 4rem;
+  background-color: white;
+  display: table;
+  box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.footer-content {
+  font-size: 0.9rem;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 1.2rem;
+}

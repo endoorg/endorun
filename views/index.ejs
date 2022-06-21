@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Endo Run</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
+    <link rel="stylesheet" href="./css/content.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="https://endometriozismagyarorszag.hu/"
+        ><img class="logo" src="./assets/images/logo.svg" alt="logo"
+      /></a>
+    </nav>
+    <section class="content">
+      <div class="reg-i"></div>
+      <div class="registration">
+        <div class="description">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <div class="inner-registration">
+          <h2>Regisztráció</h2>
+          <form id="reg-f">
+            <input
+              type="text"
+              id="username"
+              placeholder="Felhasználónév"
+              autocomplete="off"
+            />
+            <input
+              id="email"
+              type="email"
+              placeholder="Email cím"
+              autocomplete="off"
+            />
+            <input
+              type="password"
+              id="password"
+              placeholder="Jelszó"
+              autocomplete="off"
+            />
+            <div class="result">
+              <h3>Eredmény</h3>
+              <input
+                id="hour"
+                type="number"
+                placeholder="h"
+                autocomplete="off"
+              />
+              <p>:</p>
+              <input
+                id="minute"
+                type="number"
+                placeholder="min"
+                autocomplete="off"
+              />
+              <input
+                id="distance"
+                type="number"
+                placeholder="Távolság"
+                autocomplete="off"
+              />
+              <p>méter</p>
+            </div>
+            <input type="submit" class="next" value="Tovább" />
+          </form>
+          <a href="/login" style="font-size: 1rem">Bejelentkezés</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-content">
+        <p>Endometriózis Magyarország 2022. | Minden jog fenntartva.</p>
+        <p>Készítette Bokor Apor, Lestár Patrik, Németh Benjámin</p>
+      </div>
+    </footer>
+
+    <script>
+      const form = document.getElementById('reg-f');
+      form.addEventListener('submit', register_user);
+      async function register_user(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const hour = document.getElementById('hour').value;
+        const minute = document.getElementById('minute').value;
+        const distance = document.getElementById('distance').value;
+
+        const result = await fetch('/api/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            username,
+            email,
+            password,
+            hour,
+            minute,
+            distance,
+          }),
+        }).then(res => res.json());
+        if (result.status == 'ok') {
+          alert('success');
+          window.open('/login');
+        } else alert(result.error);
+      }
+    </script>
+  </body>
+</html>
