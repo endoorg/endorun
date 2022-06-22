@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config(); // readd if dev
 
 const express = require('express');
 const path = require('path');
