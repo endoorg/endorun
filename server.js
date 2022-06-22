@@ -8,7 +8,7 @@ const User = require('./model/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = ${process.env.JWT_SECRET};
 const PORT = process.env.PORT;
 
 mongoose.connect(process.env.MONGODB_URI/* DATABASE_URL */, { // during dev, use DATABASE_URL
