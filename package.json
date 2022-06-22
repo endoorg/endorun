@@ -14,7 +14,8 @@
     "mongoose": "^6.4.0"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+	"startprod": "node server.js"
   },
   "devDependencies": {
     "dotenv": "^16.0.1",
