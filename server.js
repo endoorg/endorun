@@ -9,8 +9,9 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const JWT_SECRET = process.env.JWT_SECRET;
+const PORT = process.env.PORT;
 
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect(process.env.MONGODB_URI/* DATABASE_URL */, { // during dev, use DATABASE_URL
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -120,6 +121,6 @@ app.post('/api/register', async (req, res) => {
   res.json({ status: 'ok' });
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('server up at 3000');
 });
