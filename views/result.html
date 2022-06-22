@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/nav.css" />
-    <link rel="stylesheet" href="./css/eredmeny.css" />
+    <link rel="stylesheet" href="./css/content.css" />
     <link rel="stylesheet" href="./css/footer.css" />
     <script src="confetti.js"></script>
   </head>
@@ -24,25 +24,20 @@
     </nav>
     <canvas id="confetti-canvas"></canvas>
     <section class="content">
-      <div class="image"></div>
-      <div class="result">
-        <div class="inner-result">
-          <h2>Gratulálunk</h2>
-          <div id="un-h"></div>
-          <p>Lefutott távolság:</p>
-          <h3 class="tavolsag"></h3>
-          <div id="di-h"></div>
-          <p>Idő:</p>
-          <h3 class="ido"></h3>
-          <div id="ho-h"></div>
-          <div id="min-h"></div>
-        </div>
+      <div class="res-i"></div>
+      <div class="box">
+        <h2>Gratulálunk <div id="un-h"></div></h2>
+        <h3>Lefutott távolság:</h3>
+        <div class="result-box" id="di-h"></div>
+        <h3>Idő:</h3>
+        <div class="result-box" id="ho-h"></div>
+        <div class="result-box" id="min-h"></div>
       </div>
     </section>
     <footer>
       <div class="footer-content">
         <p>Endometriózis Magyarország 2022. | Minden jog fenntartva.</p>
-        <p>Készítette Bokor Apor, Lestár Patrik, Németh Benjámin</p>
+        <p>Készítette Bokor Apor, Lestár Patrik</p>
       </div>
     </footer>
     <script>
@@ -80,6 +75,11 @@
       minholder.appendChild(minp);
 
       startConfetti();
+
+      setTimeout(function(){
+        stopConfetti()
+      }, 5000);
+
     </script>
   </body>
 </html>

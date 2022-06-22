@@ -6,7 +6,8 @@
 }
 
 .login-i,
-.reg-i {
+.reg-i,
+.res-i {
   width: 100%;
   height: 100%;
   background-position: center center;
@@ -21,30 +22,11 @@
 .reg-i {
   background-image: url(../assets/images/running-woman.jpg);
 }
-.registration,
-.login {
-  position: absolute;
-  top: 50%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border-radius: 5rem;
-  width: 32rem;
-  height: 32rem;
-  box-shadow: 0 0 10px var(--shadow-color);
-  animation-name: registration;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
+
+.res-i {
+  background-image: url(../assets/images/running-woman-3.jpg);
 }
 
-@keyframes registration {
-  0% {
-    top: -35rem;
-  }
-  100% {
-    top: 50%;
-  }
-}
 
 .description {
   font-style: italic;
@@ -67,11 +49,6 @@
   animation-timing-function: ease-in-out;
 }
 
-.login .description {
-  top: 26rem;
-  left: -2rem;
-}
-
 @keyframes description {
   0% {
     transform: scale(0) translate(-50%, -50%);
@@ -92,23 +69,38 @@
   transform: translate(-50%, -50%);
 }
 
-.inner-registration,
-.inner-login {
+.box {
+  padding: 4rem 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 5rem;
+  width: 32rem;
+  box-shadow: 0 0 10px var(--shadow-color);
+  animation-name: registration;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
 }
 
-.inner-registration h2,
-.inner-login h2 {
+@keyframes box {
+  0% {
+    top: -35rem;
+  }
+  100% {
+    top: 50%;
+  }
+}
+
+.box h2 {
   font-size: 3rem;
   text-align: center;
   margin-bottom: 1rem;
 }
 
-.inner-registration input,
-.inner-login input {
+.box input {
   margin-bottom: 1rem;
   margin-left: 50%;
   transform: translateX(-50%);
@@ -117,13 +109,12 @@
   outline: none;
   border: 1px solid var(--light-gray);
   border-radius: 10rem;
-  padding: 1rem 1rem;
+  padding: 1.3rem 1rem;
   font-size: 1rem;
   transition: 0.2s;
 }
 
-.inner-registration input:focus,
-.inner-login input:focus {
+.box input:focus {
   border: 1px solid var(--dark-gray);
 }
 
@@ -136,13 +127,13 @@
   width: 16rem;
 }
 
-.result h3 {
+.box h3 {
   font-size: 1.5rem;
   margin: -0.4rem 0 0.3rem;
   text-align: center;
 }
 
-.result p {
+.box p {
   font-size: 1rem;
   display: inline-block;
 }
@@ -179,8 +170,7 @@ input#distance {
   width: 5rem;
 }
 
-input.next, 
-.login-button {
+.box .submit-button {
   background-color: var(--yellow);
   border-radius: 10rem;
   border: 2px solid var(--yellow);
@@ -192,22 +182,37 @@ input.next,
   margin-left: 50%;
   transform: translateX(-50%);
   transition: 0.2s;
-  padding: 0 !important;
-}
-
-input.next:hover, 
-.login-button:hover {
-  background-color: white;
-}
-
-.or-login h3 {
-  font-size: 1.3rem;
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.login-button {
+  padding: 0;
   font-size: 1rem;
   width: 10rem;
   margin-top: .7rem;
+}
+
+.box h4 {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.box h4 a {
+  font-weight: bold;
+}
+
+.result-box {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0.5rem auto 2rem;
+  background-color: var(--yellow);
+  padding: 0.5rem 0;
+  border-radius: 1rem;
+  width: 20rem;
+}
+
+#confetti-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  pointer-events: none;
 }
