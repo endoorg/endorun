@@ -48,7 +48,7 @@
     <script>
       const token = localStorage.getItem('token');
       console.log(token);
-      if (!token) window.open('/');
+      if (!token) return window.open('/');
       const username = localStorage.getItem('username');
       const hour = localStorage.getItem('hour');
       const minute = localStorage.getItem('minute');
