@@ -23,78 +23,75 @@
     </nav>
     <section class="content">
       <div class="reg-i"></div>
-      <div class="registration">
-        <div class="description">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
+      <div class="description">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
         </div>
-        <div class="inner-registration">
-          <h2>Regisztráció</h2>
-          <form id="reg-f">
+      <div class="box">
+        <h2>Regisztráció</h2>
+        <form id="reg-f">
+          <input
+            type="text"
+            id="username"
+            placeholder="Felhasználónév"
+            autocomplete="off"
+			required="required"
+          />
+          <input
+            id="email"
+            type="email"
+            placeholder="Email cím"
+            autocomplete="off"
+			required="required"
+          />
+          <input
+            type="password"
+            id="password"
+            placeholder="Jelszó"
+            autocomplete="off"
+			  required="required"
+          />
+          <div class="result">
+            <h3>Eredmény</h3>
             <input
-              type="text"
-              id="username"
-              placeholder="Felhasználónév"
+            id="hour"
+              type="number"
+              placeholder="h"
+              autocomplete="off"
+			  required="required"
+            />
+            <p>:</p>
+            <input
+              id="minute"
+              type="number"
+              placeholder="min"
               autocomplete="off"
 			  required="required"
             />
             <input
-              id="email"
-              type="email"
-              placeholder="Email cím"
+              id="distance"
+              type="number"
+              placeholder="Távolság"
               autocomplete="off"
 			  required="required"
             />
-            <input
-              type="password"
-              id="password"
-              placeholder="Jelszó"
-              autocomplete="off"
-			  required="required"
-            />
-            <div class="result">
-              <h3>Eredmény</h3>
-              <input
-                id="hour"
-                type="number"
-                placeholder="h"
-                autocomplete="off"
-			    required="required"
-              />
-              <p>:</p>
-              <input
-                id="minute"
-                type="number"
-                placeholder="min"
-                autocomplete="off"
-			    required="required"
-              />
-              <input
-                id="distance"
-                type="number"
-                placeholder="Távolság"
-                autocomplete="off"
-			    required="required"
-              />
-              <p>méter</p>
-            </div>
-            <input type="submit" class="next" value="Tovább" />
-          </form>
-          <div class="or-login">
-            <h3>Vagy jelentkezz be:</h3>
-            <a href="/login" class="login-button">Bejelentkezés</a>
+            <p>méter</p>
           </div>
+          <input type="submit" class="submit-button" value="Tovább" />
+        </form>
+        <div>
+          <h4>Vagy jelentkezz be <a href="/login">itt</a></h4>
         </div>
       </div>
     </section>
     <footer>
       <div class="footer-content">
         <p>Endometriózis Magyarország 2022. | Minden jog fenntartva.</p>
-        <p>Készítette Bokor Apor, Lestár Patrik, Németh Benjámin</p>
+        <p>Készítette Bokor Apor, Lestár Patrik</p>
       </div>
     </footer>
 
