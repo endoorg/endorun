@@ -26,12 +26,11 @@
     <section class="content">
       <div class="res-i"></div>
       <div class="box">
-        <h2>Gratulálunk <div id="un-h"></div></h2>
-        <h3>Lefutott távolság:</h3>
-        <div class="result-box" id="di-h"></div>
+        <h2 id="congrats-username">Gratulálunk!</h2>
+        <h3 style="margin-top: 2rem;">Lefutott távolság:</h3>
+        <h5 id="distance"></h5>
         <h3>Idő:</h3>
-        <div class="result-box" id="ho-h"></div>
-        <div class="result-box" id="min-h"></div>
+        <h5 id="time"></h5>
       </div>
     </section>
     <footer>
@@ -44,35 +43,15 @@
       const token = localStorage.getItem('token');
       console.log(token);
       if (!token) window.open('/');
+
       const username = localStorage.getItem('username');
       const hour = localStorage.getItem('hour');
       const minute = localStorage.getItem('minute');
       const distance = localStorage.getItem('distance');
 
-      let unholder = document.getElementById('un-h');
-      let distholder = document.getElementById('di-h');
-      let hourholder = document.getElementById('ho-h');
-      let minholder = document.getElementById('min-h');
-
-      let unp = document.createElement('p');
-      let unnode = document.createTextNode(username);
-      unp.appendChild(unnode);
-      unholder.appendChild(unp);
-
-      let distp = document.createElement('p');
-      let distnode = document.createTextNode(distance);
-      distp.appendChild(distnode);
-      distholder.appendChild(distp);
-
-      let hourp = document.createElement('p');
-      let hournode = document.createTextNode(hour);
-      hourp.appendChild(hournode);
-      hourholder.appendChild(hourp);
-
-      let minp = document.createElement('p');
-      let minnode = document.createTextNode(minute);
-      minp.appendChild(minnode);
-      minholder.appendChild(minp);
+      document.getElementById("congrats-username").innerHTML = "Gratulálunk " + username + "!";
+      document.getElementById("distance").innerHTML = distance + " m";
+      document.getElementById("time").innerHTML = hour + ":" + minute;
 
       startConfetti();
 

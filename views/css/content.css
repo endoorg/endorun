@@ -29,36 +29,22 @@
 
 
 .description {
+  display: none;
   font-style: italic;
   font-size: 1.2rem;
   color: var(--dark-gray);
   line-height: 1.3rem;
   text-align: center;
   position: absolute;
-  top: 3rem;
-  left: -5rem;
-  z-index: 10;
+  top: 50%;
+  left: calc(50% - 23rem);
+  z-index: 11;
   transform: translate(-50%, -50%);
   background-color: var(--yellow);
   border-radius: 50%;
   width: 20rem;
   height: 20rem;
   box-shadow: 0 0 10px var(--shadow-color);
-  animation-name: description;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes description {
-  0% {
-    transform: scale(0) translate(-50%, -50%);
-  }
-  50% {
-    transform: scale(0) translate(-50%, -50%);
-  }
-  100% {
-    transform: scale(1) translate(-50%, -50%);
-  }
 }
 
 .description p {
@@ -78,11 +64,13 @@
   transform: translate(-50%, -50%);
   background-color: white;
   border-radius: 5rem;
-  width: 32rem;
+  width: 90%;
   box-shadow: 0 0 10px var(--shadow-color);
-  animation-name: registration;
+  animation-name: box;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
+  z-index: 10;
+  max-width: 32rem;
 }
 
 @keyframes box {
@@ -100,11 +88,15 @@
   margin-bottom: 1rem;
 }
 
+#reg-f, 
+#log-f {
+  text-align:center
+}
+
 .box input {
+  max-width: 20rem;
   margin-bottom: 1rem;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  width: 20rem;
+  width: 80%;
   height: 2rem;
   outline: none;
   border: 1px solid var(--light-gray);
@@ -179,8 +171,6 @@ input#distance {
   height: 2.3rem;
   outline: none;
   cursor: pointer;
-  margin-left: 50%;
-  transform: translateX(-50%);
   transition: 0.2s;
   padding: 0;
   font-size: 1rem;
@@ -198,7 +188,7 @@ input#distance {
   font-weight: bold;
 }
 
-.result-box {
+.box h5 {
   font-size: 2.5rem;
   text-align: center;
   margin: 0.5rem auto 2rem;
@@ -215,4 +205,12 @@ input#distance {
   z-index: 1000;
   display: block;
   pointer-events: none;
+}
+
+@media (min-width: 1440px) {
+
+  .description {
+    display: block;
+  }
+
 }
