@@ -100,7 +100,9 @@
             localStorage.setItem('hour', r.hour);
             localStorage.setItem('minute', r.minute);
             localStorage.setItem('distance', r.distance);
-            window.open('/result');
+            setTimeout(() => {
+                        window.open('/result');
+                    })
           }
         } else alert(result.error);
       }
