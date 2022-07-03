@@ -27,7 +27,6 @@
   background-image: url(../assets/images/running-woman-3.jpg);
 }
 
-
 .description {
   display: none;
   font-style: italic;
@@ -62,10 +61,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+
+  display: grid;
+
   background-color: white;
   border-radius: 5rem;
   width: 90%;
   box-shadow: 0 0 10px var(--shadow-color);
+
   animation-name: box;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
@@ -88,9 +91,14 @@
   margin-bottom: 1rem;
 }
 
-#reg-f, 
+#reg-f,
 #log-f {
-  text-align:center
+  text-align: center;
+}
+
+#reg-f {
+  display: grid;
+  justify-items: center;
 }
 
 .box input {
@@ -112,11 +120,20 @@
 
 .result {
   font-size: 1.3rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem;
   margin-left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); */
   white-space: nowrap;
-  width: 16rem;
+  max-width: 20rem;
+  width: 80%;
+}
+
+.result-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .box h3 {
@@ -158,7 +175,7 @@ input#hour {
 }
 
 input#distance {
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   width: 5rem;
 }
 
@@ -175,7 +192,7 @@ input#distance {
   padding: 0;
   font-size: 1rem;
   width: 10rem;
-  margin-top: .7rem;
+  margin-top: 0.7rem;
 }
 
 .box h4 {
@@ -195,7 +212,9 @@ input#distance {
   background-color: var(--yellow);
   padding: 0.5rem 0;
   border-radius: 1rem;
-  width: 20rem;
+  /* width: 20rem; */
+  width: 90%;
+  min-width: min-content;
 }
 
 #confetti-canvas {
@@ -208,9 +227,7 @@ input#distance {
 }
 
 @media (min-width: 1440px) {
-
   .description {
     display: block;
   }
-
 }

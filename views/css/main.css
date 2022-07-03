@@ -12,7 +12,7 @@
 body,
 button,
 input {
-  font-family: 'Radio Canada', sans-serif;
+  font-family: "Radio Canada", sans-serif;
 }
 
 input::-webkit-outer-spin-button,
@@ -21,6 +21,10 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type='number'] {
+input[type="number"] {
   -moz-appearance: textfield;
+}
+
+strong {
+  font-weight: 700;
 }

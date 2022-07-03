@@ -26,8 +26,8 @@
     <section class="content">
       <div class="res-i"></div>
       <div class="box">
-        <h2 id="congrats-username">Gratulálunk!</h2>
-        <h3 style="margin-top: 2rem;">Lefutott távolság:</h3>
+        <h2>Gratulálunk <strong id="congrats-username"></strong>!</h2>
+        <h3 style="margin-top: 2rem">Lefutott távolság:</h3>
         <h5 id="distance"></h5>
         <h3>Idő:</h3>
         <h5 id="time"></h5>
@@ -40,25 +40,24 @@
       </div>
     </footer>
     <script>
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       console.log(token);
-      if (!token) window.open('/');
+      if (!token) window.open("/");
 
-      const username = localStorage.getItem('username');
-      const hour = localStorage.getItem('hour');
-      const minute = localStorage.getItem('minute');
-      const distance = localStorage.getItem('distance');
+      const username = localStorage.getItem("username");
+      const hour = localStorage.getItem("hour");
+      const minute = localStorage.getItem("minute");
+      const distance = localStorage.getItem("distance");
 
-      document.getElementById("congrats-username").innerHTML = "Gratulálunk " + username + "!";
+      document.getElementById("congrats-username").innerHTML = "" + username;
       document.getElementById("distance").innerHTML = distance + " m";
       document.getElementById("time").innerHTML = hour + ":" + minute;
 
       startConfetti();
 
-      setTimeout(function(){
-        stopConfetti()
+      setTimeout(function () {
+        stopConfetti();
       }, 5000);
-
     </script>
   </body>
 </html>
