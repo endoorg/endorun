@@ -25,14 +25,11 @@
       <div class="reg-i"></div>
       <div class="description">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          Köszönjük, hogy támogatja alapítványunkat!
         </p>
         </div>
       <div class="box">
-        <h2>Regisztráció</h2>
+        <h2>Nevezés</h2>
         <form id="reg-f">
           <input
             type="text"
@@ -91,7 +88,6 @@
     <footer>
       <div class="footer-content">
         <p>Endometriózis Magyarország 2022. | Minden jog fenntartva.</p>
-        <p>Készítette Bokor Apor, Lestár Patrik</p>
       </div>
     </footer>
 
@@ -122,7 +118,7 @@
           }),
         }).then(res => res.json());
         if (result.status == 'ok') {
-          // alert('success');
+
           window.open('/login');
         } else alert(result.error);
       }
